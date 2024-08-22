@@ -6,6 +6,7 @@ load_dotenv()
 
 # Get Secrets
 IT_JOBS_RADAR_TOKEN = os.getenv('IT_JOBS_RADAR_TOKEN')
+SERVER_ID = int(os.getenv('SERVER_ID'))
 LISTENING_CHANNEL = int(os.getenv('LISTENING_CHANNEL'))
 CHANNEL_REMOTE = int(os.getenv('CHANNEL_REMOTE'))
 CHANNEL_NSW = int(os.getenv('CHANNEL_NSW'))
@@ -20,13 +21,21 @@ CHANNEL_TAS = int(os.getenv('CHANNEL_TAS'))
 intents = discord.Intents.default()
 intents.message_content = True
 
+bot = discord.Bot(intents=intents)
 client = discord.Client(intents=intents)
+# all_guilds = bot.guilds
+# print(all_guilds)
+@bot.event
+async def on_connect():
+    if bot.auto_sync_commands:
+        await bot.sync_commands()
+    print(f"{bot.user.name} connected.")
 
-@client.event
+@bot.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'We have logged in as {bot.user}')
 
-@client.event
+@bot.event
 async def on_message(message):
     if message.author == client.user:
         return
@@ -65,6 +74,23 @@ async def on_message(message):
 
     
 # ----------------------------- Slash Commands -----------------------------
+@bot.command(description="Select your programming languages")
+async def lang(ctx):
+    main_guild = await bot.fetch_guild(SERVER_ID)
+    
+    # Create view
+    # view = discord.ui.View(url_button, timeout=None)
+
+    nsw = discord.utils.get(main_guild.roles , name="NSW")
+    await ctx.defer()
+    await ctx.user.add_roles(nsw)
+    await ctx.followup.send(f"Roleaaa is added yeah", ephemeral=True)
+
+
+@bot.command(description="Select job titles you want to apply")
+async def title(ctx):
+    print('ssdf')
+    await ctx.respond(f"Role isdsds added", ephemeral=True)
 
 
 
@@ -74,10 +100,4 @@ async def on_message(message):
 
 
 
-
-
-
-
-
-
-client.run(IT_JOBS_RADAR_TOKEN)
+bot.run(IT_JOBS_RADAR_TOKEN)
