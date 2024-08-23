@@ -1,7 +1,7 @@
 import os, discord
 from views.regionSettingView import regionSettingView
 from views.languageSettingView import languageSettingView
-from views.frameworksSettingView import frameworksSettingView
+from views.frameworkSettingView import frameworksSettingView
 from views.jobTitleSettingView import jobTitleSettingView
 
 # Load the environment variables from the .env file (For local enviroment)
@@ -77,7 +77,6 @@ async def on_message(message):
     else:
         return
 
-
 # ----------------------------- Slash Commands -----------------------------
 @bot.command(description="Select your regions")
 async def region(interaction: discord.Interaction):
@@ -85,7 +84,7 @@ async def region(interaction: discord.Interaction):
     user = interaction.user
     view = regionSettingView(user, main_guild)
 
-    await interaction.respond(description="**Select your regions**",view=view, ephemeral=True)
+    await interaction.respond("**Select your regions**",view=view, ephemeral=True)
 
 @bot.command(description="Select your programming languages")
 async def lang(interaction: discord.Interaction):
@@ -93,7 +92,7 @@ async def lang(interaction: discord.Interaction):
     user = interaction.user
     view = languageSettingView(user, main_guild)
 
-    await interaction.respond(f"**Select your programming languages**",view=view, ephemeral=True)
+    await interaction.respond("**Select your programming languages**",view=view, ephemeral=True)
 
 @bot.command(description="Select your frameworks or libraries")
 async def frame(interaction: discord.Interaction):
@@ -109,7 +108,8 @@ async def title(interaction: discord.Interaction):
     user = interaction.user
     view = jobTitleSettingView(user, main_guild)
 
-    await interaction.respond(description="**Select job titles you want to apply**",view=view, ephemeral=True)
+    await interaction.respond("**Select job titles you want to apply**",view=view, ephemeral=True)
+
 
 
 

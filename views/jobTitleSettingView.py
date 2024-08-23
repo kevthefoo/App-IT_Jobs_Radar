@@ -7,9 +7,8 @@ class jobTitleSettingView(View):
     def __init__(self, user, main_guild):
         self.user = user
         self.main_guild = main_guild
-        self.user_roles = self.user.roles
         super().__init__(timeout=None)
-        with open('./views/jobTitleSettingData.json', 'r') as f:
+        with open('./data/views/jobTitleSettingData.json', 'r') as f:
             data = json.load(f)
 
         for item in data:
@@ -29,7 +28,7 @@ class jobTitleSettingView(View):
         role = discord.utils.get(self.main_guild.roles , name=custom_id)
         all_buttons = self.children
 
-        if role not in self.user_roles:
+        if role not in self.user.roles:
             for button in all_buttons:
                 if button.label == custom_id:
                     button.style = discord.ButtonStyle.green
