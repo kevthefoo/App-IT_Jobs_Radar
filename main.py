@@ -1,5 +1,9 @@
 import os, discord
+from views.regionSettingView import regionSettingView
 from views.languageSettingView import languageSettingView
+from views.frameworksSettingView import frameworksSettingView
+from views.jobTitleSettingView import jobTitleSettingView
+
 # Load the environment variables from the .env file (For local enviroment)
 from dotenv import load_dotenv
 load_dotenv()
@@ -25,6 +29,7 @@ bot = discord.Bot(intents=intents)
 client = discord.Client(intents=intents)
 # all_guilds = bot.guilds
 # print(all_guilds)
+
 @bot.event
 async def on_connect():
     if bot.auto_sync_commands:
@@ -72,8 +77,16 @@ async def on_message(message):
     else:
         return
 
-    
+
 # ----------------------------- Slash Commands -----------------------------
+@bot.command(description="Select your regions")
+async def region(interaction: discord.Interaction):
+    main_guild = await bot.fetch_guild(SERVER_ID)
+    user = interaction.user
+    view = regionSettingView(user, main_guild)
+
+    await interaction.respond(description="**Select your regions**",view=view, ephemeral=True)
+
 @bot.command(description="Select your programming languages")
 async def lang(interaction: discord.Interaction):
     main_guild = await bot.fetch_guild(SERVER_ID)
@@ -82,10 +95,24 @@ async def lang(interaction: discord.Interaction):
 
     await interaction.respond(f"**Select your programming languages**",view=view, ephemeral=True)
 
-# @bot.command(description="Select job titles you want to apply")
-# async def title(ctx):
-#     print('ssdf')
-#     await ctx.respond(f"Role isdsds added", ephemeral=True)
+@bot.command(description="Select your frameworks or libraries")
+async def frame(interaction: discord.Interaction):
+    main_guild = await bot.fetch_guild(SERVER_ID)
+    user = interaction.user
+    view = frameworksSettingView(user, main_guild)
+
+    await interaction.respond(f"**Select your frameworks or libraries**",view=view, ephemeral=True)
+
+@bot.command(description="Select job titles you want to apply")
+async def title(interaction: discord.Interaction):
+    main_guild = await bot.fetch_guild(SERVER_ID)
+    user = interaction.user
+    view = jobTitleSettingView(user, main_guild)
+
+    await interaction.respond(description="**Select job titles you want to apply**",view=view, ephemeral=True)
+
+
+
 
 
 
