@@ -1,5 +1,5 @@
 import os, discord
-
+from views.languageSettingView import languageSettingView
 # Load the environment variables from the .env file (For local enviroment)
 from dotenv import load_dotenv
 load_dotenv()
@@ -75,28 +75,17 @@ async def on_message(message):
     
 # ----------------------------- Slash Commands -----------------------------
 @bot.command(description="Select your programming languages")
-async def lang(ctx):
+async def lang(interaction: discord.Interaction):
     main_guild = await bot.fetch_guild(SERVER_ID)
-    
-    # Create view
-    # view = discord.ui.View(url_button, timeout=None)
+    user = interaction.user
+    view = languageSettingView(user, main_guild)
 
-    nsw = discord.utils.get(main_guild.roles , name="NSW")
-    await ctx.defer()
-    await ctx.user.add_roles(nsw)
-    await ctx.followup.send(f"Roleaaa is added yeah", ephemeral=True)
+    await interaction.respond(f"**Select your programming languages**",view=view, ephemeral=True)
 
-
-@bot.command(description="Select job titles you want to apply")
-async def title(ctx):
-    print('ssdf')
-    await ctx.respond(f"Role isdsds added", ephemeral=True)
-
-
-
-
-
-
+# @bot.command(description="Select job titles you want to apply")
+# async def title(ctx):
+#     print('ssdf')
+#     await ctx.respond(f"Role isdsds added", ephemeral=True)
 
 
 
