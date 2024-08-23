@@ -1,5 +1,6 @@
 [
     "NodeJS",
+    ".NET",
     "React",
     "Vue",
     "Angular",
@@ -15,6 +16,5 @@
     "PyTorch",
     "Flask",
     "Django",
-    "Selenium",
-    ".NET"
+    "Selenium"
 ]
