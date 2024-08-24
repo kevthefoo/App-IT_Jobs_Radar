@@ -4,7 +4,8 @@ import json
 def locationRoleSelector(job_location):
     with open('./data/tags/locationTag.json', 'r') as f:
         locationTagData = json.load(f)
-        
+    
+    role = None
     job_location = job_location.lower()
     if job_location in locationTagData:
         role = locationTagData[job_location]["Tag"]

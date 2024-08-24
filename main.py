@@ -23,6 +23,7 @@ CHANNEL_WA = int(os.getenv('CHANNEL_WA'))
 CHANNEL_NT = int(os.getenv('CHANNEL_NT'))
 CHANNEL_TAS = int(os.getenv('CHANNEL_TAS'))
 
+main_guild = None
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -39,6 +40,8 @@ async def on_connect():
 
 @bot.event
 async def on_ready():
+    global main_guild
+    main_guild = await bot.fetch_guild(SERVER_ID)
     print(f'We have logged in as {bot.user}')
 
 @bot.event
@@ -49,6 +52,7 @@ async def on_message(message):
     
     if message.channel.id == LISTENING_CHANNEL:
         # Get the information matadata
+        global main_guild
         message_id = message.id
         message_content = message.content
 
@@ -60,15 +64,22 @@ async def on_message(message):
         job_url = filtered_message[10]
         job_source = filtered_message[13]
 
-        # Get the location roles which are related to the job
-        target_location_role = locationRoleSelector(job_location)
+        # Get the location role names which are related to the job
+        target_location_role_tag = locationRoleSelector(job_location)
+        print(target_location_role_tag)
+        print(main_guild.roles)
+        role = discord.utils.get(main_guild.roles , name=target_location_role_tag)
+
+        if target_location_role_tag == None:
+            with open("./data/errors/error.txt", "a") as f:
+                f.write(f"Error: {job_location} is not a valid location\n")
 
         # Find the target channel
-        CHANNEL_ID = int(os.getenv(f'CHANNEL_{target_location_role}'))
+        CHANNEL_ID = int(os.getenv(f'CHANNEL_{target_location_role_tag}'))
         target_channel = bot.get_channel(CHANNEL_ID)
 
         # Create embed message
-        message_to_send = f'**Location:** {job_location}\n\n**Company:** {job_company}\n\n<@&1273005059055030305>'
+        message_to_send = f'**Location:** {job_location}\n\n**Company:** {job_company}\n\n<@&{role.id}>'
         footer = discord.EmbedFooter(text=f"This job is founded on {job_source}")
         with open('./data/banners/banner.json', 'r') as f:
             data = json.load(f)
@@ -90,7 +101,7 @@ async def on_message(message):
 # ----------------------------- Slash Commands -----------------------------
 @bot.command(description="Select your regions")
 async def region(interaction: discord.Interaction):
-    main_guild = await bot.fetch_guild(SERVER_ID)
+    global main_guild
     user = interaction.user
     view = regionSettingView(user, main_guild)
 
@@ -98,7 +109,7 @@ async def region(interaction: discord.Interaction):
 
 @bot.command(description="Select your programming languages")
 async def lang(interaction: discord.Interaction):
-    main_guild = await bot.fetch_guild(SERVER_ID)
+    global main_guild
     user = interaction.user
     view = languageSettingView(user, main_guild)
 
@@ -106,7 +117,7 @@ async def lang(interaction: discord.Interaction):
 
 @bot.command(description="Select your frameworks or libraries")
 async def frame(interaction: discord.Interaction):
-    main_guild = await bot.fetch_guild(SERVER_ID)
+    global main_guild
     user = interaction.user
     view = frameworksSettingView(user, main_guild)
 
@@ -114,14 +125,11 @@ async def frame(interaction: discord.Interaction):
 
 @bot.command(description="Select job titles you want to apply")
 async def title(interaction: discord.Interaction):
-    main_guild = await bot.fetch_guild(SERVER_ID)
+    global main_guild
     user = interaction.user
     view = jobTitleSettingView(user, main_guild)
 
     await interaction.respond("**Select job titles you want to apply**",view=view, ephemeral=True)
-
-
-
 
 
 
