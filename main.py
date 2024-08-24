@@ -1,4 +1,4 @@
-import os, discord
+import os, discord, json
 from views.regionSettingView import regionSettingView
 from views.languageSettingView import languageSettingView
 from views.frameworkSettingView import frameworksSettingView
@@ -26,7 +26,6 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = discord.Bot(intents=intents)
-client = discord.Client(intents=intents)
 # all_guilds = bot.guilds
 # print(all_guilds)
 
@@ -42,7 +41,8 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.author == client.user:
+
+    if message.author == bot.user:
         return
     
     if message.channel.id == LISTENING_CHANNEL:
@@ -56,14 +56,18 @@ async def on_message(message):
         job_location = filtered_message[4]
         job_company = filtered_message[7]
         job_url = filtered_message[10]
+        job_source = filtered_message[13]
 
         # Find the target channel
-        target_channel = client.get_channel(1274728634946687006)
+        target_channel = bot.get_channel(1274728634946687006)
 
         # Create embed message
         message_to_send = f'**Location:** {job_location}\n\n**Company:** {job_company}\n\n<@&1273005059055030305>'
-        footer = discord.EmbedFooter(text="This job is founded on Linkedin")
-        image = discord.EmbedMedia("https://content.linkedin.com/content/dam/brand/site/img/logo/do/do-approved-assets.png")
+        footer = discord.EmbedFooter(text=f"This job is founded on {job_source}")
+        with open('./data/banners/banner.json', 'r') as f:
+            data = json.load(f)
+            job_source_banner_url = data[job_source.lower()]
+        image = discord.EmbedMedia(job_source_banner_url)
         embed = discord.Embed(title=job_title, description=message_to_send, url=job_url, footer=footer, image=image, colour=discord.Colour.blue())
 
         # Create URL button
