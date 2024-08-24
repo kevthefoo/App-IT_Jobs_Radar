@@ -4,6 +4,8 @@ from views.languageSettingView import languageSettingView
 from views.frameworkSettingView import frameworksSettingView
 from views.jobTitleSettingView import jobTitleSettingView
 
+from src.roleSelector import locationRoleSelector
+
 # Load the environment variables from the .env file (For local enviroment)
 from dotenv import load_dotenv
 load_dotenv()
@@ -58,8 +60,12 @@ async def on_message(message):
         job_url = filtered_message[10]
         job_source = filtered_message[13]
 
+        # Get the location roles which are related to the job
+        target_location_role = locationRoleSelector(job_location)
+
         # Find the target channel
-        target_channel = bot.get_channel(1274728634946687006)
+        CHANNEL_ID = int(os.getenv(f'CHANNEL_{target_location_role}'))
+        target_channel = bot.get_channel(CHANNEL_ID)
 
         # Create embed message
         message_to_send = f'**Location:** {job_location}\n\n**Company:** {job_company}\n\n<@&1273005059055030305>'

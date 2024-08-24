@@ -1,0 +1,146 @@
+{
+    "queensland": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "new south wales": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "victoria": {
+        "State": "Victoria",
+        "Tag": "VIC"
+    },
+    "south australia": {
+        "State": "South Australia",
+        "Tag": "SA"
+    },
+    "western australia": {
+        "State": "Western Australia",
+        "Tag": "WA"
+    },
+    "tasmania": {
+        "State": "Tasmania",
+        "Tag": "TAS"
+    },
+    "northern territory": {
+        "State": "Northern Territory",
+        "Tag": "NT"
+    },
+    "australian capital territory": {
+        "State": "Australian Capital Territory",
+        "Tag": "ACT"
+    },
+    "sydney": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "melbourne": {
+        "State": "Victoria",
+        "Tag": "VIC"
+    },
+    "brisbane": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "perth": {
+        "State": "Western Australia",
+        "Tag": "WA"
+    },
+    "adelaide": {
+        "State": "South Australia",
+        "Tag": "SA"
+    },
+    "hobart": {
+        "State": "Tasmania",
+        "Tag": "TAS"
+    },
+    "darwin": {
+        "State": "Northern Territory",
+        "Tag": "NT"
+    },
+    "canberra": {
+        "State": "Australian Capital Territory",
+        "Tag": "ACT"
+    },
+    "gold coast": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "newcastle": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "wollongong": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "sunshine coast": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "geelong": {
+        "State": "Victoria",
+        "Tag": "VIC"
+    },
+    "townsville": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "cairns": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "toowoomba": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "ballarat": {
+        "State": "Victoria",
+        "Tag": "VIC"
+    },
+    "bendigo": {
+        "State": "Victoria",
+        "Tag": "VIC"
+    },
+    "albury": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "launceston": {
+        "State": "Tasmania",
+        "Tag": "TAS"
+    },
+    "rockhampton": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "mackay": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "bundaberg": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "bathurst": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "wagga wagga": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "hervey bay": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "coffs harbour": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "alice springs": {
+        "State": "Northern Territory",
+        "Tag": "NT"
+    }
+}
