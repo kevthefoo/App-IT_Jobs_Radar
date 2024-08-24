@@ -73,6 +73,8 @@ async def on_message(message):
         if target_location_role_tag == None:
             with open("./data/errors/error.txt", "a") as f:
                 f.write(f"Error: {job_location} is not a valid location\n")
+                print(f"Error: {job_location} is not a valid location")
+            return
 
         # Find the target channel
         CHANNEL_ID = int(os.getenv(f'CHANNEL_{target_location_role_tag}'))

@@ -1,0 +1,5 @@
+Error: Canberra, Australian Capital Territory, Australia (On-site) is not a valid location
+Error: Sydney, New South Wales, Australia (Hybrid) is not a valid location
+Error: Sydney, New South Wales, Australia (Hybrid) is not a valid location
+Error: Perth, Western Australia, Australia (Hybrid) is not a valid location
+Error: Sydney, New South Wales, Australia (Remote) is not a valid location

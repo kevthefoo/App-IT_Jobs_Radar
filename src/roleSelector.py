@@ -5,10 +5,15 @@ def locationRoleSelector(job_location):
     with open('./data/tags/locationTag.json', 'r') as f:
         locationTagData = json.load(f)
     
+    job_location_elements = job_location.split(',')
+
     role = None
-    job_location = job_location.lower()
-    if job_location in locationTagData:
-        role = locationTagData[job_location]["Tag"]
+    
+    for element in job_location_elements:
+        job_location = element.strip().lower()
+        if job_location in locationTagData:
+            role = locationTagData[job_location]["Tag"]
+            break
 
     return role
 
