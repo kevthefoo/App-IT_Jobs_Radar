@@ -4,10 +4,15 @@ import json
 def locationRoleSelector(job_location):
     with open('./data/tags/locationTag.json', 'r') as f:
         locationTagData = json.load(f)
+
+    if 'remote' in job_location.lower():
+        role = "Remote"
+        return role
     
     job_location_elements = job_location.split(',')
 
     role = None
+
     
     for element in job_location_elements:
         job_location = element.strip().lower()
