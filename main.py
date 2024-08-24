@@ -62,12 +62,12 @@ async def on_message(message):
         job_location = filtered_message[4]
         job_company = filtered_message[7]
         job_url = filtered_message[10]
+        if len(job_url) > 512:
+            job_url = job_url.split('/?')[0]
         job_source = filtered_message[13]
 
         # Get the location role names which are related to the job
         target_location_role_tag = locationRoleSelector(job_location)
-        print(target_location_role_tag)
-        print(main_guild.roles)
         role = discord.utils.get(main_guild.roles , name=target_location_role_tag)
 
         if target_location_role_tag == None:
