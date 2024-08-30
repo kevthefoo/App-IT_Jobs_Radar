@@ -8,3 +8,22 @@ Error: Australia (Remote) is not a valid location
 Error: Australia (Remote) is not a valid location
 Error: Australia (Remote) is not a valid location
 Error: Australia (Remote) is not a valid location
+Error: Greater Melbourne Area (Hybrid) is not a valid location
+Error: Greater Melbourne Area (On-site) is not a valid location
+Error: Greater Sydney Area (Hybrid) is not a valid location
+Error: Greater Sydney Area (Hybrid) is not a valid location
+Error: Greater Perth Area (On-site) is not a valid location
+Error: Greater Melbourne Area (Hybrid) is not a valid location
+Error: Greater Melbourne Area (On-site) is not a valid location
+Error: Greater Sydney Area (Hybrid) is not a valid location
+Error: Greater Melbourne Area (Hybrid) is not a valid location
+Error: Gold Coast (Hybrid) is not a valid location
+Error: Greater Melbourne Area (Hybrid) is not a valid location
+Error: Greater Melbourne Area (Hybrid) is not a valid location
+Error: Greater Sydney Area (Hybrid) is not a valid location
+Error: Greater Melbourne Area is not a valid location
+Error: Greater Sydney Area (Hybrid) is not a valid location
+Error: Greater Sydney Area (On-site) is not a valid location
+Error: Greater Perth Area (On-site) is not a valid location
+Error: Greater Sydney Area (On-site) is not a valid location
+Error: Australia is not a valid location
