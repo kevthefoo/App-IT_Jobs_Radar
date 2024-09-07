@@ -62,3 +62,30 @@ Error: Orange is not a valid location
 Error: Melbourne VIC is not a valid location
 Error: Leeming is not a valid location
 Error: Canberra ACT is not a valid location
+Error: Perth WA is not a valid location
+Error: Newcastle Newcastle, Maitland & Hunter NSW is not a valid location
+Error: Orange Blue Mountains & Central West NSW is not a valid location
+Error: Brisbane QLD is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Leeming Perth WA is not a valid location
+Error: Canberra ACT is not a valid location
+Error: Canberra ACT is not a valid location
+Error: Brisbane QLD is not a valid location
+Error: Adelaide SA is not a valid location
+Error: Chatswood Sydney NSW is not a valid location
+Error: Mackay Mackay & Coalfields QLD is not a valid location
+Error: Revesby Sydney NSW is not a valid location
+Error: Welshpool Perth WA is not a valid location
+Error: Dubbo Dubbo & Central NSW is not a valid location
+Error: Canberra ACT is not a valid location
+Error: Sydney NSW is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Maroochydore Sunshine Coast QLD is not a valid location
+Error: Orange Blue Mountains & Central West NSW is not a valid location
+Error: Varsity Lakes Gold Coast QLD is not a valid location
+Error: Orange Blue Mountains & Central West NSW is not a valid location
+Error: Varsity Lakes Gold Coast QLD is not a valid location
+Error: Orange Blue Mountains & Central West NSW is not a valid location
+Error: Varsity Lakes Gold Coast QLD is not a valid location
+Error: Orange Blue Mountains & Central West NSW is not a valid location

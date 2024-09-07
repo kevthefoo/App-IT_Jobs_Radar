@@ -142,5 +142,37 @@
     "alice springs": {
         "State": "Northern Territory",
         "Tag": "NT"
+    },
+    "nsw": {
+        "State": "New South Wales",
+        "Tag": "NSW"
+    },
+    "vic": {
+        "State": "Victoria",
+        "Tag": "VIC"
+    },
+    "qld": {
+        "State": "Queensland",
+        "Tag": "QLD"
+    },
+    "sa": {
+        "State": "South Australia",
+        "Tag": "SA"
+    },
+    "wa": {
+        "State": "Western Australia",
+        "Tag": "WA"
+    },
+    "tas": {
+        "State": "Tasmania",
+        "Tag": "TAS"
+    },
+    "nt": {
+        "State": "Northern Territory",
+        "Tag": "NT"
+    },
+    "act": {
+        "State": "Australian Capital Territory",
+        "Tag": "ACT"
     }
 }

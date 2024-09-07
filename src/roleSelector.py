@@ -9,7 +9,7 @@ def locationRoleSelector(job_location):
         role = "Remote"
         return role
     
-    job_location_elements = job_location.split(',')
+    job_location_elements = job_location.replace(',','').split(' ')
 
     role = None
 
