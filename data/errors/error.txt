@@ -27,3 +27,38 @@ Error: Greater Sydney Area (On-site) is not a valid location
 Error: Greater Perth Area (On-site) is not a valid location
 Error: Greater Sydney Area (On-site) is not a valid location
 Error: Australia is not a valid location
+Error: Varsity Lakes is not a valid location
+Error: Parramatta is not a valid location
+Error: Perth WA is not a valid location
+Error: Brisbane QLD is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Orange is not a valid location
+Error: Leeming is not a valid location
+Error: Varsity Lakes is not a valid location
+Error: Parramatta is not a valid location
+Error: Perth WA is not a valid location
+Error: Brisbane QLD is not a valid location
+Error: Orange is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Leeming is not a valid location
+Error: Canberra ACT is not a valid location
+Error: Revesby is not a valid location
+Error: Chatswood is not a valid location
+Error: Brisbane QLD is not a valid location
+Error: Canberra ACT is not a valid location
+Error: Adelaide SA is not a valid location
+Error: Welshpool is not a valid location
+Error: Canberra ACT is not a valid location
+Error: Sydney NSW is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Western Suburbs & Ipswich is not a valid location
+Error: Sydney NSW is not a valid location
+Error: Varsity Lakes is not a valid location
+Error: Maroochydore is not a valid location
+Error: Perth WA is not a valid location
+Error: Brisbane QLD is not a valid location
+Error: Orange is not a valid location
+Error: Melbourne VIC is not a valid location
+Error: Leeming is not a valid location
+Error: Canberra ACT is not a valid location
